@@ -15,6 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 public class JsonReader {
@@ -26,7 +27,7 @@ public class JsonReader {
         JSONParser jsonParser = new JSONParser();
         JSONObject json = (JSONObject) jsonParser.parse(fr);
         JSONArray jsonArray = (JSONArray) json.get(testName);
-        data = new Object[1][1];
+        data = new Object[jsonArray.size()][1];
         HashMap<String, String> map = null;
 
         for(int i=0; i < jsonArray.size(); i++) {
